@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate - LAB404</title>
+    <!-- 
+        Theme: LAB404 is a research lab at CMKL University in Thailand.
+        Style Guide:
+        - Primary color: #0251e3 (blue)
+        - Secondary color: #620000 (dark red)
+        - Background color: #000919 (very dark blue)
+        - Text color: #ffffff (white on dark backgrounds), #000000 (black on light backgrounds)
+        - Font families: "Outfit" for body text, "Alata" for titles
+        - Modern, clean design with card-based layout for collaboration options
+        - Bold section headers with contrasting backgrounds
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0251e3;
+            --secondary-color: #620000;
+            --dark-bg: #000919;
+            --light-text: #ffffff;
+            --dark-text: #000000;
+            --card-bg: #ffffff;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Alata', sans-serif;
+        }
+        
+        .container {
+            width: 94%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--light-text);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 300;
+            padding: 10px 5px;
+            font-size: 16px;
+        }
+        
+        nav ul li a.active {
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        /* Hero section */
+        .hero {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 150px 0 75px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 24px;
+            color: var(--light-text);
+        }
+        
+        /* Collaboration options */
+        .collaboration-options {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 40px 0 75px;
+        }
+        
+        .options-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .collab-card {
+            background-color: var(--card-bg);
+            border-radius: 0;
+            padding: 30px;
+            margin-bottom: 30px;
+            width: calc(33% - 20px);
+            text-align: center;
+            color: var(--dark-text);
+        }
+        
+        .collab-card h3 {
+            color: var(--dark-text);
+            font-size: 26px;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        .collab-card p {
+            color: var(--dark-text);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #000000;
+            color: var(--light-text);
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 0;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 400;
+            border: none;
+        }
+        
+        /* Testimonials section */
+        .testimonials {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 75px 0;
+        }
+        
+        .testimonials h2 {
+            margin-bottom: 10px;
+        }
+        
+        .testimonials-intro {
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .testimonial-card {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            width: 100%;
+        }
+        
+        .testimonial-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .testimonial-card:nth-child(even) .testimonial-image {
+            margin-right: 0;
+            margin-left: 30px;
+        }
+        
+        .testimonial-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 0;
+            object-fit: cover;
+            margin-right: 30px;
+        }
+        
+        .testimonial-content {
+            flex: 1;
+        }
+        
+        .testimonial-content h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--light-text);
+            color: var(--dark-text);
+            padding: 40px 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+        
+        .footer-grid div h4 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        .footer-grid div p {
+            margin: 5px 0;
+        }
+        
+        .copyright {
+            text-align: left;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .options-grid {
+                flex-direction: column;
+            }
+            
+            .collab-card {
+                width: 100%;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card, .testimonial-card:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial-image, .testimonial-card:nth-child(even) .testimonial-image {
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/lab404">LAB404</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/collaborate" class="active">Collaborate</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Make an Impact @ <span style="color: #0251e3;">LAB404</span></h1>
+                <p>Be a part of groundbreaking research at CMKL University</p>
+            </div>
+        </section>
+
+        <!-- Collaboration Options Section -->
+        <section class="collaboration-options">
+            <div class="container">
+                <div class="options-grid">
+                    <div class="collab-card">
+                        <h3><strong>Join us!</strong></h3>
+                        <p>As an <strong>Intern</strong> from any University, or as a regular CMKL <strong>Student</strong>, let's advance groundbreaking research and innovative solutions.</p>
+                        <p>Partner with the <strong>LAB404</strong> team to explore cutting-edge technology and deliver impactful projects.</p>
+                        <a href="/contact" class="btn">Learn More</a>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <h3><strong>Support Our Mission</strong></h3>
+                        <p>As a <strong>Professional</strong>, or <strong>Academic</strong>, contribute with your expertise, and enable our teams to shape the future.</p>
+                        <p>Help us bring <strong>LAB404</strong> visionary ideas to life.</p>
+                        <a href="/contact" class="btn">Learn More</a>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <h3><strong>Become a Project Partner</strong></h3>
+                        <p>Align with our mission by becoming a partner.</p>
+                        <p>Together, we can push the boundaries of research and design while creating a lasting impact.</p>
+                        <a href="/contact" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="testimonials-intro">
+                    <h2>Testimonials from Our Team of Enthusiasts</h2>
+                    <p>See what our students and collaborators say.</p>
+                </div>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <img src="//custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/500380_367758.jpeg" alt="Khant" class="testimonial-image">
+                        <div class="testimonial-content">
+                            <h3><strong>Khant (Sophomore Student)</strong></h3>
+                            <p>Collaborating on these projects as a Research Apprentice and Business Analyst Intern has strengthened my portfolio while providing invaluable real-world and academic research experience. Working closely with a multidisciplinary team, I developed skills in teamwork, project analysis, and aligning innovative ideas with industry needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <img src="//custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/52263_358179.jpeg" alt="Thiri" class="testimonial-image">
+                        <div class="testimonial-content">
+                            <h3><strong>Thiri (Sophomore Student)</strong></h3>
+                            <p>Serving as a Project Producer and Designer on these initiatives allowed me to hone my leadership skills while collaborating with a talented, multidisciplinary team. I gained hands-on experience managing projects, driving creative vision, and aligning innovative designs with real-world goals, fostering both teamwork and impactful outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4><strong>About Us</strong></h4>
+                    <p>Our Mission</p>
+                    <p>Our Activities</p>
+                </div>
+                
+                <div>
+                    <h4><strong>Collaborate</strong></h4>
+                    <p>We are Recruiting!</p>
+                </div>
+                
+                <div>
+                    <h4><strong>Contact Us</strong></h4>
+                    <p>CMKL University</p>
+                    <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>©2025 LAB404</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+        Developer Notes:
+        1. This is a cleaned version of the LAB404 collaboration page that maintains the original design
+        2. Original image URLs have been preserved
+        3. Color scheme matches the original site: dark blue background, white text, red testimonials section
+        4. For production, consider:
+           - Hosting the images locally instead of using Strikingly's CDN
+           - Adding hover effects to buttons and navigation
+           - Making the testimonial cards more interactive
+           - Adding smooth scrolling for navigation links
+           - Including social media links in the footer
+    -->
+</body>
+</html>

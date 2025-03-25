@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - LAB404</title>
+    
+    <!-- 
+    Theme Notes for Developers:
+    - Color Scheme: Dark blue backgrounds (#000919) with white text and red accents
+    - Typography: Primary fonts are 'Outfit' and 'Alata'
+    - Site Purpose: Research lab website for LAB404 at CMKL University Thailand
+    - Content Focus: Showcasing innovative research projects, news, and collaboration opportunities
+    -->
+    
+    <style>
+        :root {
+            --primary-dark: #000919;
+            --primary-accent: #0251e3;
+            --secondary-accent: #ff0000;
+            --text-light: #ffffff;
+            --text-dark: #000000;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Alata', sans-serif;
+            margin-top: 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 300;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--primary-accent);
+        }
+        
+        /* Main Content */
+        main {
+            padding-top: 100px;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .section-header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .section-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Blog/News Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .blog-card {
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            margin: 0 0 15px;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .blog-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .blog-title a:hover {
+            color: var(--primary-accent);
+        }
+        
+        .blog-excerpt {
+            margin-top: 0;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column p {
+            margin: 5px 0;
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav {
+                margin-top: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+            
+            main {
+                padding-top: 150px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Include the fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="/lab404">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/lab404">LAB404</a></li>
+                    <li><a href="/news" class="active">News</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/collaborate">Collaborate</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="section-header">
+            <div class="container">
+                <h1>NEWS @ <span style="color: var(--primary-accent);">LAB404</span></h1>
+                <p>Keep up with the dynamic progress and latest achievements of our research teams.</p>
+            </div>
+        </section>
+        
+        <section class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1080,w_1080,f_auto,q_auto/19116572/370515_383891.png')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 17, 2025</div>
+                        <h2 class="blog-title">
+                            <a href="https://lab404.mystrikingly.com/blog/ai-engineering-and-innovation-summit-2024-highlights">
+                                AI Engineering and Innovation Summit 2024 Highlights
+                            </a>
+                        </h2>
+                        <p class="blog-excerpt">
+                            On December 13th 2024, Professor Lorenzo and the team had the privilege of presenting at the AI Engineering and Innovation Summit 2024 in Bangkok, Thailand. This prestigious event brought together innovators, researchers, and technology enthusiasts to explore groundbreaking advancements in AI and their real-world applications.
+                            <br><br>
+                            Our team showcased two exciting projects: My Happy Thai Neighbourhood and TH-Hai Immersion. My Happy Thai Neighbourhood is an interactive game designed to educate players about cybersecurity through engaging gameplay, empowering them to recognize and combat cyber threats in a fun, relatable way. Meanwhile, TH-Hai Immersion leverages AI to deliver an unparalleled language and cultural learning experience.
+                        </p>
+                        <a href="https://lab404.mystrikingly.com/blog/ai-engineering-and-innovation-summit-2024-highlights" class="read-more">Read more</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1080,w_1080,f_auto,q_auto/19116572/320970_300273.png')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 17, 2025</div>
+                        <h2 class="blog-title">
+                            <a href="https://lab404.mystrikingly.com/blog/showcasing-my-happy-thai-neighbourhood-at-cmkl">
+                                Showcasing My Happy Thai Neighbourhood at CMKL
+                            </a>
+                        </h2>
+                        <p class="blog-excerpt">
+                            We were thrilled to present My Happy Thai Neighbourhood regularly at CMKL's Local Project Showcases! This interactive game, designed to educate players on recognizing and combating cybercrimes, was met with enthusiastic feedback from attendees.
+                            <br><br>
+                            The showcase offered an excellent opportunity to share our vision of blending education and entertainment through AI-driven solutions tailored for Southeast Asia. Engaging with local students, educators, and innovators provided valuable insights to further enhance the game.
+                            <br><br>
+                            We're excited to continue refining My Happy Thai Neighbourhood and exploring more opportunities to make a positive impact in the community.
+                        </p>
+                        <a href="https://lab404.mystrikingly.com/blog/showcasing-my-happy-thai-neighbourhood-at-cmkl" class="read-more">Read more</a>
+                    </div>
+                </article>
+                
+                <!-- Third card for future content, currently empty but styled consistently -->
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://via.placeholder.com/800x450/f0f0f0/cccccc?text=Future+Article')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">Coming soon</div>
+                        <h2 class="blog-title">
+                            <a href="#">Future Project Announcement</a>
+                        </h2>
+                        <p class="blog-excerpt">
+                            Stay tuned for more exciting news about upcoming projects and events at LAB404. We're constantly working on innovative solutions and research initiatives that combine AI, education, and positive social impact.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Our Mission</p>
+                    <p>Our Activities</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Collaborate</h3>
+                    <p>We are Recruiting!</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>CMKL University</p>
+                    <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>©2025 LAB404</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
