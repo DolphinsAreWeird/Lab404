@@ -3,552 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000919">
     <title>LAB404 - CMKL University</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --dark-blue: #000919;
-            --dark-red: #620000;
-            --accent-red: #ff0000;
-            --white: #ffffff;
-            --black: #000000;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Outfit', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--dark-blue);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 15px 0;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin: 0 20px;
-        }
-        
-        .nav-links a {
-            color: white;
-            font-weight: 300;
-            font-size: 16px;
-            position: relative;
-        }
-        
-        .nav-links a.active {
-            text-decoration: underline;
-            text-decoration-color: var(--accent-red);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 5px;
-        }
-        
-        .logo {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .logo img {
-            height: 50px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: var(--dark-blue);
-            padding-top: 150px;
-            padding-bottom: 150px;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 40px;
-            font-weight: normal;
-            font-family: 'Alata', sans-serif;
-        }
-        
-        .hero h1 span {
-            color: var(--accent-red);
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            font-weight: 300;
-        }
-        
-        .hero p span.highlight {
-            color: var(--accent-red);
-        }
-        
-        /* Section transition */
-        .section-transition {
-            position: relative;
-            height: 100px;
-            overflow: hidden;
-        }
-        
-        .transition-shape {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .top-shape {
-            background-color: var(--dark-blue);
-            /* Clean diagonal line */
-            clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
-        }
-        
-        .bottom-shape {
-            background-color: var(--dark-red);
-            /* Clean diagonal line */
-            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
-        }
-        
-        /* Red section */
-        .red-section {
-            background-color: var(--dark-red);
-            padding: 80px 0;
-            color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: normal;
-            font-family: 'Alata', sans-serif;
-        }
-        
-        .section-title p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-        
-        /* Projects Section */
-        .projects {
-            padding: 80px 0;
-            background-color: var(--dark-red);
-        }
-        
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background-color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .project-header {
-            position: relative;
-        }
-        
-        .project-header img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .project-features {
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        
-        .project-title {
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            color: var(--black);
-        }
-        
-        .project-features ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .project-features ul li {
-            margin-bottom: 8px;
-        }
-        
-        .project-demo {
-            text-align: center;
-            margin-top: 15px;
-        }
-        
-        .project-demo-note {
-            text-align: center;
-            font-size: 12px;
-            margin-top: 5px;
-            font-style: italic;
-        }
-        
-        .project-contact {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--black);
-            color: white;
-            padding: 10px 15px;
-        }
-        
-        .project-contact a {
-            color: white;
-            font-size: 14px;
-        }
-        
-        .project-contact img {
-            height: 30px;
-        }
-        
-        .project-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-            color: var(--black);
-        }
-        
-        .project-description {
-            text-align: center;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-        
-        .project-cta {
-            text-align: center;
-            margin-top: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--black);
-            color: white;
-            padding: 10px 25px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        
-        .footer-column h4 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h4::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 30px;
-            height: 2px;
-            background-color: var(--accent-red);
-        }
-        
-        .footer-column p {
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-        
-        .footer-bottom {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            opacity: 0.6;
-        }
-        
-        @media (max-width: 992px) {
-            .project-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-            
-            .logo {
-                position: static;
-                transform: none;
-                margin-bottom: 15px;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-transition {
-                height: 50px;
-            }
-            
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738566445_VQbP5C4.png" type="image/x-icon">
 </head>
 <body>
-    <header>
+    <!-- Header & Navigation -->
+    <header class="header">
         <div class="container nav-container">
-            <ul class="nav-links">
-                <li><a href="/" class="active">LAB404</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/collaborate">Collaborate</a></li>
-                <li><a href="/contact">Contact</a></li>
+            <ul class="nav-links nav-left">
+                <li><a href="index.html">LAB404</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="projects.html">Projects</a></li>
             </ul>
+            
             <div class="logo">
-                <a href="/">
-                    <img src=https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
+                <a href="index.html">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
                 </a>
+            </div>
+            
+            <ul class="nav-links nav-right">
+                <li><a href="collaborate.html">Collaborate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to <span>LAB404</span></h1>
-            <p>Engage with the latest educational experiment of LAB404,</p>
-            <p>the <span class="highlight">Special Projects Unit</span> at <span class="highlight">CMKL University</span>,</p>
-            <p>nurturing innovation through creativity, technology, business, AI, and hands-on development.</p>
-        </div>
-    </section>
-
-    <!-- Clean diagonal transition between sections -->
-    <div class="section-transition">
-        <div class="transition-shape top-shape"></div>
-        <div class="transition-shape bottom-shape"></div>
-    </div>
-
-    <section class="red-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>LAB404 - Talent Incubator</h2>
-                <p>Creativity to serve innovation</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to <span class="highlight">LAB404</span></h1>
+                <p>Engage with the latest educational experiment of LAB404,<br>
+                the <span class="highlight">Special Projects Unit</span> at <span class="highlight">CMKL University</span>,<br>
+                nurturing innovation through creativity, technology, business, AI, and hands-on development.</p>
+                
+                <div class="hero-buttons mt-4">
+                    <a href="projects.html" class="btn">Explore Our Projects</a>
+                    <a href="collaborate.html" class="btn btn-outline ml-3">Join Our Team</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">Projects @ <span style="color: white;">LAB404</span></h2>
-                <p>Explore some of our pioneering projects</p>
+        <!-- Wave Transition -->
+        <!-- <div class="wave-transition dark-to-red">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div> -->
+
+        <!-- Talent Incubator Section -->
+        <section class="section section-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">LAB404 - Talent Incubator</h2>
+                    <p class="section-subtitle">Creativity to serve innovation</p>
+                </div>
             </div>
-            
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="MY HAPPY THAI NEIGHBORHOOD">
-                    </div>
-                    
-                    <div class="project-features">
-                        <h3 class="project-title">Revolutionizing Gamified Education</h3>
-                        <ul>
-                            <li>Webtoon-Based Learning Platform</li>
-                            <li>Gamifying Cybersecurity and Scam Awareness Education</li>
-                            <li>Cutting-Edge Technology in EdTech and Artificial Intelligence</li>
-                        </ul>
-                        <div class="project-demo">
-                            <a href="#" class="btn">Try our Demo!</a>
-                        </div>
-                        <p class="project-demo-note">* Prototype is using temporary placeholder art</p>
-                    </div>
-                    
-                    <div class="project-contact">
-                        <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a>
-                        <img src="https://cmkl.ac.th/wp-content/uploads/2019/09/logo.png" alt="CMKL">
-                        <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a>
-                    </div>
-                    
-                    <div class="project-content">
-                        <h2 class="project-name">MY HAPPY THAI NEIGHBORHOOD</h2>
-                        <p class="project-description">An engaging interactive webtoon-based game designed to educate players in Southeast Asia about cybercrime and equip them with practical strategies to combat scams effectively.</p>
-                        <div class="project-cta">
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                    </div>
+        </section>
+
+        <!-- Project Showcase Section -->
+        <section class="section section-secondary section-pattern">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Projects @ <span class="highlight">LAB404</span></h2>
+                    <p class="section-subtitle">Explore some of our pioneering projects</p>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="TH.AI.IMMERSION">
-                    </div>
-                    
-                    <div class="project-features">
-                        <h3 class="project-title">Redefining Digital Immersion</h3>
-                        <ul>
-                            <li>Constant Generation and Interaction</li>
-                            <li>Experience Thailand and its beauty immersively through digital media</li>
-                            <li>Cutting-Edge Technology Utilizing Diffusion and Generation</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project-contact">
-                        <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a>
-                        <img src="https://cmkl.ac.th/wp-content/uploads/2019/09/logo.png" alt="CMKL">
-                        <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a>
-                    </div>
-                    
-                    <div class="project-content">
-                        <h2 class="project-name">TH.AI.IMMERSION</h2>
-                        <p class="project-description">An AI-generated digital art immersion that transforms real-world environments into interactive artistic impressionist renditions.</p>
-                        <div class="project-cta">
-                            <a href="#" class="btn">Read More</a>
+                <div class="grid grid-3">
+                    <!-- Project 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="MY HAPPY THAI NEIGHBORHOOD">
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="card-title">MY HAPPY THAI NEIGHBORHOOD</h3>
+                            <p class="card-description">An engaging interactive webtoon-based game designed to educate players in Southeast Asia about cybercrime and equip them with practical strategies to combat scams effectively.</p>
+                            
+                            <div class="card-details">
+                                <h4>Revolutionizing Gamified Education</h4>
+                                <ul class="mb-3">
+                                    <li>Webtoon-Based Learning Platform</li>
+                                    <li>Gamifying Cybersecurity and Scam Awareness</li>
+                                    <li>EdTech and AI Integration</li>
+                                </ul>
+                                <div class="text-center mb-3">
+                                    <a href="#" class="btn">Try our Demo</a>
+                                    <p class="mt-1"><small><em>* Prototype uses placeholder art</em></small></p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <a href="projects.html" class="btn btn-dark">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="FALLACY HUNTER">
+                    
+                    <!-- Project 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="TH.AI.IMMERSION">
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="card-title">TH.AI.IMMERSION</h3>
+                            <p class="card-description">An AI-generated digital art immersion that transforms real-world environments into interactive artistic impressionist renditions.</p>
+                            
+                            <div class="card-details">
+                                <h4>Redefining Digital Immersion</h4>
+                                <ul class="mb-3">
+                                    <li>Real-time Generation and Interaction</li>
+                                    <li>Immersive Thailand Cultural Experience</li>
+                                    <li>Advanced Diffusion Model Integration</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <a href="projects.html" class="btn btn-dark">Read More</a>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="project-features">
-                        <h3 class="project-title">Enabling Critical Reading</h3>
-                        <ul>
-                            <li>Identify logical fallacies with NLP and Pattern detection</li>
-                            <li>Provide feedback to help users understand and avoid fallacies</li>
-                            <li>Enhance critical thinking and communication within papers and articles</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project-contact">
-                        <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a>
-                        <img src="https://cmkl.ac.th/wp-content/uploads/2019/09/logo.png" alt="CMKL">
-                        <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a>
-                    </div>
-                    
-                    <div class="project-content">
-                        <h2 class="project-name">FALLACY HUNTER</h2>
-                        <p class="project-description">A browser-based extension focused on text-based fallacy detection using pattern recognition and machine learning frameworks.</p>
-                        <div class="project-cta">
-                            <a href="#" class="btn">Read More</a>
+                    <!-- Project 3 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="FALLACY HUNTER">
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="card-title">FALLACY HUNTER</h3>
+                            <p class="card-description">A browser-based extension focused on text-based fallacy detection using pattern recognition and machine learning frameworks.</p>
+                            
+                            <div class="card-details">
+                                <h4>Enabling Critical Reading</h4>
+                                <ul class="mb-3">
+                                    <li>Advanced NLP Fallacy Detection</li>
+                                    <li>Real-time Feedback and Learning</li>
+                                    <li>Enhanced Communication Skills</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <a href="projects.html" class="btn btn-dark">Read More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <!-- Wave Transition -->
+        <!-- <div class="wave-transition red-to-light">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div> -->
+
+        <!-- CTA Section -->
+        <section class="section section-light">
+            <div class="container text-center">
+                <h2 class="section-title">Join Our Team</h2>
+                <p class="mb-4">Be part of groundbreaking research and innovation at LAB404</p>
+                <a href="collaborate.html" class="btn">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Scroll to top button -->
+        <button id="scroll-top" class="scroll-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-column">
-                    <h4>About Us</h4>
+                    <h3>About Us</h3>
                     <p><a href="#">Our Mission</a></p>
                     <p><a href="#">Our Activities</a></p>
                 </div>
+                
                 <div class="footer-column">
-                    <h4>Collaborate</h4>
-                    <p><a href="#">We are Recruiting!</a></p>
-                    <p><a href="#">Research Partnerships</a></p>
+                    <h3>Collaborate</h3>
+                    <p><a href="collaborate.html">We are Recruiting!</a></p>
+                    <p><a href="collaborate.html">Research Partnerships</a></p>
                 </div>
+                
                 <div class="footer-column">
-                    <h4>Contact Us</h4>
+                    <h3>Contact Us</h3>
                     <p>CMKL University</p>
                     <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
                     <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a></p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>©2025 LAB404 | All Rights Reserved</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
