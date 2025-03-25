@@ -3,280 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000919">
     <title>Projects - LAB404</title>
     
-    <!-- 
-    DEVELOPER NOTES:
-    - This is the Projects page for LAB404, a Special Projects Unit at CMKL University
-    - Core theme: Modern academic research showcase with a dark red background (#620000) and white text
-    - Color scheme: Dark red background, white text, blue highlights (#0251e3)
-    - Font: "Outfit" for body text, "Alata" for titles
-    - Layout structure: Navigation bar with logo at top, cards for projects in a 3-column grid
-    -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary-color: #620000;
-            --accent-color: #0251e3;
-            --text-color: #ffffff;
-            --dark-text: #000000;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: "Outfit", sans-serif;
-            line-height: 1.6;
-            color: var(--dark-text);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: "Alata", sans-serif;
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .logo img {
-            height: 50px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin: 0 1rem;
-        }
-        
-        .nav-links a {
-            color: var(--text-color);
-            font-weight: 300;
-        }
-        
-        .nav-links a.active {
-            border-bottom: 2px solid var(--text-color);
-        }
-        
-        /* Main content */
-        .main-section {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 8rem 2rem 4rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h1 {
-            font-size: 2.5rem;
-        }
-        
-        .section-header p {
-            font-size: 1.2rem;
-        }
-        
-        /* Project Grid */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-image {
-            width: 100%;
-            aspect-ratio: 2/3;
-            object-fit: cover;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-title {
-            color: var(--dark-text);
-            margin-bottom: 1rem;
-        }
-        
-        .project-description {
-            color: var(--dark-text);
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-button {
-            margin-top: auto;
-            text-align: center;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #000000;
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 0;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            opacity: 0.8;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: white;
-            padding: 3rem 2rem;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-        }
-        
-        .footer-column p {
-            margin-bottom: 0.5rem;
-            color: var(--dark-text);
-        }
-        
-        .copyright {
-            text-align: left;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
-            color: var(--dark-text);
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-            
-            .nav-links {
-                margin-top: 1rem;
-            }
-            
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738566445_VQbP5C4.png" type="image/x-icon">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="/lab404">LAB404</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/projects" class="active">Projects</a></li>
-                <li><a href="/collaborate">Collaborate</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <section class="main-section">
-        <div class="container">
-            <div class="section-header">
-                <h1><span>PROJECTS @ </span><span style="color: var(--accent-color);">LAB404</span></h1>
-                <p>Explore some of our pioneering projects.</p>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
+                </a>
             </div>
             
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <img src="//custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="My Happy Thai Neighborhood" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">MY HAPPY THAI NEIGHBORHOOD</h3>
-                        <p class="project-description">An engaging interactive webtoon-based game designed to educate players in Southeast Asia about cybercrime and equip them with practical strategies to combat scams effectively.</p>
-                        <div class="project-button">
-                            <a href="https://lab404.mystrikingly.com/news" class="btn">Read More</a>
-                        </div>
-                    </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">LAB404</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>PROJECTS @ <span class="highlight">LAB404</span></h1>
+                <p>Explore some of our pioneering projects and innovative solutions</p>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="section section-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Current Projects</h2>
+                    <p class="section-subtitle">Pushing the boundaries of innovation and research</p>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <img src="//custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="TH.AI.IMMERSION" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">TH.AI.IMMERSION</h3>
-                        <p class="project-description">An AI-generated digital art immersion that transforms real-world environments into interactive artistic impressionist renditions.</p>
-                        <div class="project-button">
-                            <a href="https://lab404.mystrikingly.com/news" class="btn">Read More</a>
+                <div class="grid grid-3">
+                    <!-- Project 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="MY HAPPY THAI NEIGHBORHOOD">
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="card-title">MY HAPPY THAI NEIGHBORHOOD</h3>
+                            <p class="card-description">An interactive webtoon-based game educating players about cybercrime and equipping them with strategies to combat online scams.</p>
+                            
+                            <div class="card-details">
+                                <h4>Revolutionizing Gamified Education</h4>
+                                <ul>
+                                    <li>Webtoon-Based Learning Platform</li>
+                                    <li>Cybersecurity Awareness Education</li>
+                                    <li>AI-Driven Personalized Learning</li>
+                                </ul>
+                                
+                                <h4 class="mt-3">Project Goals</h4>
+                                <p>Create an engaging educational platform that teaches cybersecurity awareness through gamified storytelling for Southeast Asian audiences.</p>
+                                
+                                <div class="text-center mt-3">
+                                    <a href="#" class="btn">Try the Demo</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info mt-3">
+                                <p class="mb-1"><strong>Project Contacts:</strong></p>
+                                <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <img src="//custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="FALLACY HUNTER" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">FALLACY HUNTER</h3>
-                        <p class="project-description">A browser-based extension focused on text-based fallacy detection using pattern recognition and machine learning frameworks.</p>
-                        <div class="project-button">
-                            <a href="https://lab404.mystrikingly.com/news" class="btn">Read More</a>
+                    
+                    <!-- Project 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="TH.AI.IMMERSION">
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="card-title">TH.AI.IMMERSION</h3>
+                            <p class="card-description">An AI-generated digital art experience transforming environments into interactive artistic renditions of Thai culture.</p>
+                            
+                            <div class="card-details">
+                                <h4>Redefining Digital Immersion</h4>
+                                <ul>
+                                    <li>Real-time Generation and Interaction</li>
+                                    <li>Cultural Immersion Experience</li>
+                                    <li>Advanced Diffusion Models</li>
+                                </ul>
+                                
+                                <h4 class="mt-3">Project Goals</h4>
+                                <p>Create immersive digital experiences showcasing Thai culture through AI-generated art, providing both educational and aesthetic value.</p>
+                            </div>
+                            
+                            <div class="contact-info mt-3">
+                                <p class="mb-1"><strong>Project Contacts:</strong></p>
+                                <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="FALLACY HUNTER">
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="card-title">FALLACY HUNTER</h3>
+                            <p class="card-description">A browser extension for detecting logical fallacies in text using NLP and machine learning technology.</p>
+                            
+                            <div class="card-details">
+                                <h4>Enabling Critical Reading</h4>
+                                <ul>
+                                    <li>Logical Fallacy Detection</li>
+                                    <li>Real-time Feedback System</li>
+                                    <li>Enhanced Communication Skills</li>
+                                </ul>
+                                
+                                <h4 class="mt-3">Project Goals</h4>
+                                <p>Develop a tool that helps users identify logical fallacies in text, promoting critical thinking and improving online discourse.</p>
+                            </div>
+                            
+                            <div class="contact-info mt-3">
+                                <p class="mb-1"><strong>Project Contacts:</strong></p>
+                                <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Research Areas Section -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research Focus Areas</h2>
+                    <p class="section-subtitle">Our multidisciplinary approach to innovation</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Educational Technology</h3>
+                            <p class="card-description">We develop innovative approaches to learning through technology integration, gamification, and adaptive learning systems that make education more engaging and effective.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Artificial Intelligence</h3>
+                            <p class="card-description">Our team works on cutting-edge AI applications, from natural language processing to computer vision, creating solutions with real-world impact.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Digital Immersion</h3>
+                            <p class="card-description">We explore new ways to create immersive digital experiences that blend art, technology, and cultural preservation for education and engagement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Critical Thinking Tools</h3>
+                            <p class="card-description">Developing technologies that enhance human cognitive capabilities, particularly in identifying logical fallacies and improving critical analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-primary">
+            <div class="container text-center">
+                <h2 class="section-title">Interested in Collaborating?</h2>
+                <p class="mb-4">Join our team or partner with us on groundbreaking research projects.</p>
+                <a href="collaborate.html" class="btn">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Scroll to top button -->
+        <button id="scroll-top" class="scroll-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -284,26 +220,37 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>About Us</h3>
-                    <p>Our Mission</p>
-                    <p>Our Activities</p>
+                    <p><a href="#">Our Mission</a></p>
+                    <p><a href="#">Our Activities</a></p>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Collaborate</h3>
-                    <p>We are Recruiting!</p>
+                    <p><a href="collaborate.html">We are Recruiting!</a></p>
+                    <p><a href="collaborate.html">Research Partnerships</a></p>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <p>CMKL University</p>
                     <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
+                    <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a></p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>©2025 LAB404</p>
+            <div class="footer-bottom">
+                <p>©2025 LAB404 | All Rights Reserved</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
