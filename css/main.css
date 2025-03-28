@@ -472,13 +472,65 @@ body.dark-mode .testimonial-item::before { opacity: 0.3; }
 
 
 /* ==========================================================================
-   12. MAP SECTION
+   12. MAP SECTION - UPDATED WIDTH & CENTERING
    ========================================================================== */
 
-.section-map { position: relative; padding: 0; z-index: 5; }
-.map-container { width: 100%; aspect-ratio: 16 / 5; max-height: 350px; overflow: hidden; border-top: 1px solid var(--current-border); border-bottom: 1px solid var(--current-border); }
-.map-container iframe { width: 100%; height: 100%; border: 0; filter: grayscale(20%) contrast(100%) brightness(100%); transition: filter var(--transition-medium); }
-body.dark-mode .map-container iframe { filter: invert(0.95) hue-rotate(180deg) contrast(0.9) brightness(1.05); }
+   .section-map {
+    position: relative;
+    padding: 0; /* Keep no padding on the section itself */
+    z-index: 5;
+    /* Add padding *inside* the section if needed for spacing above/below map */
+    /* padding-top: var(--spacing-lg); */
+    /* padding-bottom: var(--spacing-lg); */
+    }
+
+    .map-container {
+        /* --- CONSTRAIN WIDTH & CENTER --- */
+        max-width: 960px;   /* Adjust this value as needed (e.g., 1100px, 800px) */
+        width: 90%;       /* Use a percentage for responsiveness */
+        margin-left: auto;
+        margin-right: auto;
+        /* --- End Width Constraint --- */
+
+        aspect-ratio: 16 / 9; /* More standard aspect ratio for constrained width */
+        max-height: 450px;   /* Keep max height, but aspect-ratio likely controls it now */
+        overflow: hidden;
+        border: 1px solid var(--current-border); /* Keep border */
+        border-radius: var(--border-radius);    /* Add border-radius for consistency */
+        box-shadow: var(--current-shadow-md);   /* Add subtle shadow */
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: grayscale(20%) contrast(100%) brightness(100%);
+        transition: filter var(--transition-medium);
+    }
+
+    body.dark-mode .map-container iframe {
+        filter: invert(0.95) hue-rotate(180deg) contrast(0.9) brightness(1.05);
+    }
+
+    /* Add some spacing around the map if needed */
+    .section-map {
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    /* Adjust map container aspect ratio on smaller screens if it becomes too tall */
+    @media (max-width: 768px) {
+        .map-container {
+            aspect-ratio: 4 / 3; /* Taller aspect ratio might work better on mobile */
+            max-height: 400px;
+        }
+    }
+    @media (max-width: 576px) {
+        .map-container {
+            width: 95%; /* Slightly wider on smallest screens */
+            max-height: 300px;
+        }
+    }
 
 /* ==========================================================================
    13. FORMS
