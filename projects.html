@@ -3,254 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000919">
+    <meta name="description" content="Explore innovative projects at LAB404, CMKL University. Featuring projects like My Happy Thai Neighbourhood, TH.AI.IMMERSION, and Fallacy Hunter.">
+    <meta name="keywords" content="LAB404, Projects, CMKL University, AI, EdTech, Cybersecurity, Digital Art, Critical Thinking, Innovation">
+    <meta name="theme-color" content="#f8f9fa">
     <title>Projects - LAB404</title>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Favicon -->
     <link rel="shortcut icon" href="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738566445_VQbP5C4.png" type="image/x-icon">
 </head>
-<body>
-    <!-- Header & Navigation -->
+<body class="page-projects">
+
+    <div id="tsparticles"></div> <!-- Particle Container -->
+
     <header class="header">
         <div class="container nav-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
-                </a>
+                    <img class="logo-img" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 CMKL University Logo">
+                 </a>
             </div>
-            
-            <div class="menu-toggle">
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="collaborate.html">Collaborate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle" type="button" class="theme-toggle-button-fa" aria-label="Toggle dark mode">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
+
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="index.html">LAB404</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="collaborate.html">Collaborate</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero hero-subpage">
             <div class="container">
-                <h1>PROJECTS @ <span class="highlight">LAB404</span></h1>
-                <p>Explore some of our pioneering projects and innovative solutions</p>
+                <h1 class="fade-in-on-scroll">PROJECTS @ <span class="highlight">LAB404</span></h1>
+                <p class="hero-subtitle fade-in-on-scroll">Explore some of our pioneering projects and innovative solutions</p>
             </div>
         </section>
 
-        <!-- Projects Showcase Section -->
-        <section class="section section-secondary">
+        <section class="section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header fade-in-on-scroll">
                     <h2 class="section-title">Current Projects</h2>
                     <p class="section-subtitle">Pushing the boundaries of innovation and research</p>
                 </div>
-                
-                <div class="grid grid-3">
-                    <!-- Project 1 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="MY HAPPY THAI NEIGHBORHOOD">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">MY HAPPY THAI NEIGHBORHOOD</h3>
-                            <p class="card-description">An interactive webtoon-based game educating players about cybercrime and equipping them with strategies to combat online scams.</p>
-                            
-                            <div class="card-details">
-                                <h4>Revolutionizing Gamified Education</h4>
-                                <ul>
-                                    <li>Webtoon-Based Learning Platform</li>
-                                    <li>Cybersecurity Awareness Education</li>
-                                    <li>AI-Driven Personalized Learning</li>
-                                </ul>
-                                
-                                <h4 class="mt-3">Project Goals</h4>
-                                <p>Create an engaging educational platform that teaches cybersecurity awareness through gamified storytelling for Southeast Asian audiences.</p>
-                                
-                                <div class="text-center mt-3">
-                                    <a href="#" class="btn">Try the Demo</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-info mt-3">
-                                <p class="mb-1"><strong>Project Contacts:</strong></p>
-                                <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="TH.AI.IMMERSION">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">TH.AI.IMMERSION</h3>
-                            <p class="card-description">An AI-generated digital art experience transforming environments into interactive artistic renditions of Thai culture.</p>
-                            
-                            <div class="card-details">
-                                <h4>Redefining Digital Immersion</h4>
-                                <ul>
-                                    <li>Real-time Generation and Interaction</li>
-                                    <li>Cultural Immersion Experience</li>
-                                    <li>Advanced Diffusion Models</li>
-                                </ul>
-                                
-                                <h4 class="mt-3">Project Goals</h4>
-                                <p>Create immersive digital experiences showcasing Thai culture through AI-generated art, providing both educational and aesthetic value.</p>
-                            </div>
-                            
-                            <div class="contact-info mt-3">
-                                <p class="mb-1"><strong>Project Contacts:</strong></p>
-                                <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="FALLACY HUNTER">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">FALLACY HUNTER</h3>
-                            <p class="card-description">A browser extension for detecting logical fallacies in text using NLP and machine learning technology.</p>
-                            
-                            <div class="card-details">
-                                <h4>Enabling Critical Reading</h4>
-                                <ul>
-                                    <li>Logical Fallacy Detection</li>
-                                    <li>Real-time Feedback System</li>
-                                    <li>Enhanced Communication Skills</li>
-                                </ul>
-                                
-                                <h4 class="mt-3">Project Goals</h4>
-                                <p>Develop a tool that helps users identify logical fallacies in text, promoting critical thinking and improving online discourse.</p>
-                            </div>
-                            
-                            <div class="contact-info mt-3">
-                                <p class="mb-1"><strong>Project Contacts:</strong></p>
-                                <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a></p>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- Project 1: MHTN -->
+                <div class="project-detail-block fade-in-on-scroll" id="project-mhtn">
+                     <div class="project-image">
+                         <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="Illustration for My Happy Thai Neighbourhood project showing characters and interface" loading="lazy">
+                     </div>
+                     <div class="project-content">
+                         <h3 class="project-title">MY HAPPY THAI NEIGHBORHOOD</h3>
+                         <p>An interactive webtoon-based game educating players in Southeast Asia about cybercrime and equipping them with practical strategies to combat online scams effectively.</p>
+                         <h4>Key Features & Goals:</h4>
+                         <ul class="icon-list">
+                             <li><i class="fas fa-book-open"></i> Webtoon-Based Learning Platform</li>
+                             <li><i class="fas fa-shield-alt"></i> Gamified Cybersecurity & Scam Awareness</li>
+                             <li><i class="fas fa-users"></i> Targeted for Southeast Asian Audiences</li>
+                             <li><i class="fas fa-brain"></i> EdTech and AI Integration</li>
+                             <li><i class="fas fa-bullseye"></i> Goal: Create engaging, effective cybersecurity education.</li>
+                         </ul>
+                         <div class="project-actions mt-3">
+                             <a href="#" class="btn btn-secondary" onclick="alert('Demo coming soon!'); return false;">Try the Demo</a>
+                              <p class="demo-note"><small><em>* Prototype uses placeholder art</em></small></p>
+                         </div>
+                         <div class="project-contact mt-3">
+                             <strong>Contact:</strong> <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a>
+                         </div>
+                     </div>
                 </div>
+                 <hr class="divider fade-in-on-scroll">
+
+                 <!-- Project 2: THAIIMMERSION -->
+                 <div class="project-detail-block reverse fade-in-on-scroll" id="project-thaiimmersion">
+                     <div class="project-image">
+                         <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="Abstract AI generated art representing TH.AI.IMMERSION project" loading="lazy">
+                     </div>
+                     <div class="project-content">
+                         <h3 class="project-title">TH.AI.IMMERSION</h3>
+                         <p>An AI-generated digital art experience transforming real-world environments into interactive, artistic impressionist renditions inspired by Thai culture.</p>
+                          <h4>Key Features & Goals:</h4>
+                         <ul class="icon-list">
+                             <li><i class="fas fa-magic"></i> Real-time AI Art Generation & Interaction</li>
+                             <li><i class="fas fa-vr-cardboard"></i> Immersive Digital Experience</li>
+                              <li><i class="fas fa-map-marked-alt"></i> Showcase of Thai Culture via AI Art</li>
+                             <li><i class="fas fa-atom"></i> Advanced Diffusion Model Integration</li>
+                              <li><i class="fas fa-bullseye"></i> Goal: Blend art, technology, and culture for education/aesthetics.</li>
+                         </ul>
+                         <div class="project-contact mt-3">
+                              <strong>Contact:</strong> <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a>
+                         </div>
+                     </div>
+                </div>
+                 <hr class="divider fade-in-on-scroll">
+
+                 <!-- Project 3: FALLACYHUNTER -->
+                <div class="project-detail-block fade-in-on-scroll" id="project-fallacyhunter">
+                     <div class="project-image">
+                        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="Illustration showing a magnifying glass over text for Fallacy Hunter project" loading="lazy">
+                     </div>
+                     <div class="project-content">
+                         <h3 class="project-title">FALLACY HUNTER</h3>
+                         <p>A browser-based extension focused on text-based logical fallacy detection using pattern recognition and machine learning frameworks to enhance critical reading skills.</p>
+                           <h4>Key Features & Goals:</h4>
+                         <ul class="icon-list">
+                             <li><i class="fas fa-search"></i> Advanced NLP for Fallacy Detection</li>
+                             <li><i class="fas fa-plug"></i> Convenient Browser Extension</li>
+                             <li><i class="fas fa-comment-dots"></i> Real-time Feedback & Learning Aid</li>
+                             <li><i class="fas fa-graduation-cap"></i> Enhancing Critical Thinking & Communication</li>
+                              <li><i class="fas fa-bullseye"></i> Goal: Promote critical analysis of online text.</li>
+                         </ul>
+                          <div class="project-contact mt-3">
+                              <strong>Contact:</strong> <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a> | <a href="mailto:tthiwc@cmkl.ac.th">tthiwc@cmkl.ac.th</a>
+                         </div>
+                     </div>
+                 </div>
             </div>
         </section>
 
-        <!-- Research Areas Section -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-header">
+        <section class="section section-contrast">
+             <div class="container">
+                <div class="section-header fade-in-on-scroll">
                     <h2 class="section-title">Research Focus Areas</h2>
                     <p class="section-subtitle">Our multidisciplinary approach to innovation</p>
                 </div>
-                
-                <div class="grid grid-2">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Educational Technology</h3>
-                            <p class="card-description">We develop innovative approaches to learning through technology integration, gamification, and adaptive learning systems that make education more engaging and effective.</p>
-                        </div>
+
+                <!-- Use grid-dynamic for better wrapping on different screens -->
+                <div class="grid grid-dynamic research-areas">
+                     <div class="content-block card-style text-center fade-in-on-scroll">
+                         <div class="block-icon"><i class="fas fa-laptop-code fa-2x"></i></div>
+                        <h3 class="block-title">Educational Technology</h3>
+                        <p class="block-description">Developing innovative approaches to learning through technology integration, gamification, and adaptive systems that make education more engaging and effective.</p>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Artificial Intelligence</h3>
-                            <p class="card-description">Our team works on cutting-edge AI applications, from natural language processing to computer vision, creating solutions with real-world impact.</p>
-                        </div>
+
+                    <div class="content-block card-style text-center fade-in-on-scroll">
+                         <div class="block-icon"><i class="fas fa-robot fa-2x"></i></div>
+                        <h3 class="block-title">Artificial Intelligence</h3>
+                        <p class="block-description">Working on cutting-edge AI applications, including NLP, computer vision, and generative models, creating solutions with real-world impact.</p>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Digital Immersion</h3>
-                            <p class="card-description">We explore new ways to create immersive digital experiences that blend art, technology, and cultural preservation for education and engagement.</p>
-                        </div>
+
+                    <div class="content-block card-style text-center fade-in-on-scroll">
+                        <div class="block-icon"><i class="fas fa-vr-cardboard fa-2x"></i></div>
+                        <h3 class="block-title">Digital Immersion</h3>
+                        <p class="block-description">Exploring new ways to create immersive digital experiences that blend art, technology, and cultural preservation for education, engagement, and entertainment.</p>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Critical Thinking Tools</h3>
-                            <p class="card-description">Developing technologies that enhance human cognitive capabilities, particularly in identifying logical fallacies and improving critical analysis.</p>
-                        </div>
+
+                    <div class="content-block card-style text-center fade-in-on-scroll">
+                         <div class="block-icon"><i class="fas fa-brain fa-2x"></i></div>
+                        <h3 class="block-title">Critical Thinking Tools</h3>
+                        <p class="block-description">Developing technologies that enhance human cognitive capabilities, particularly in identifying logical fallacies, analyzing information, and improving critical analysis skills.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="section section-primary">
-            <div class="container text-center">
+        <section class="section cta-section section-accent">
+            <div class="container text-center fade-in-on-scroll">
                 <h2 class="section-title">Interested in Collaborating?</h2>
-                <p class="mb-4">Join our team or partner with us on groundbreaking research projects.</p>
-                <a href="collaborate.html" class="btn">Learn More</a>
+                <p class="mb-4 section-subtitle">Join our team or partner with us on groundbreaking research projects.</p>
+                <a href="collaborate.html" class="btn btn-light">Explore Collaboration Options</a>
             </div>
         </section>
-
-        <!-- Scroll to top button -->
-        <button id="scroll-top" class="scroll-top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p><a href="#">Our Mission</a></p>
-                    <p><a href="#">Our Activities</a></p>
+             <div class="footer-grid">
+                 <div class="footer-column fade-in-on-scroll">
+                    <h3>About LAB404</h3>
+                    <p>A special projects unit at CMKL University nurturing innovation through creativity, technology, and hands-on development.</p>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Collaborate</h3>
-                    <p><a href="collaborate.html">We are Recruiting!</a></p>
-                    <p><a href="collaborate.html">Research Partnerships</a></p>
+                <div class="footer-column fade-in-on-scroll">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="collaborate.html">Collaborate</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-column">
+                <div class="footer-column fade-in-on-scroll">
                     <h3>Contact Us</h3>
-                    <p>CMKL University</p>
-                    <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
-                    <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a></p>
-                    
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p>CMKL University<br>
+                       1 Chalong Krung 1 Alley, Lat Krabang,<br> Bangkok 10520, Thailand</p>
+                    <p><a href="mailto:lorenzo@cmkl.ac.th"><i class="fas fa-envelope"></i> lorenzo@cmkl.ac.th</a></p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>©2025 LAB404 | All Rights Reserved</p>
-            </div>
+            <div class="footer-bottom fade-in-on-scroll">
+                <p>© <script>document.write(new Date().getFullYear())</script> LAB404 | CMKL University</p>
+             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>

@@ -3,241 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000919">
+    <meta name="description" content="Contact LAB404 at CMKL University. Visit us, email us, or use the contact form to get in touch about projects and collaborations.">
+    <meta name="keywords" content="LAB404, Contact, CMKL University, Bangkok, Innovation Lab, Collaboration, AI Research">
+    <meta name="theme-color" content="#f8f9fa">
     <title>Contact - LAB404</title>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Favicon -->
     <link rel="shortcut icon" href="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738566445_VQbP5C4.png" type="image/x-icon">
 </head>
-<body>
-    <!-- Header & Navigation -->
+<body class="page-contact">
+
+    <div id="tsparticles"></div> <!-- Particle Container -->
+
     <header class="header">
         <div class="container nav-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
-                </a>
+                    <img class="logo-img" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 CMKL University Logo">
+                 </a>
             </div>
-            
-            <div class="menu-toggle">
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="collaborate.html">Collaborate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle" type="button" class="theme-toggle-button-fa" aria-label="Toggle dark mode">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
+
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="index.html">LAB404</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="collaborate.html">Collaborate</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero hero-subpage">
             <div class="container">
-                <h1>Connect with <span class="highlight">LAB404</span></h1>
-                <p>Our Space/Time Localization</p>
+                <h1 class="fade-in-on-scroll">Connect with <span class="highlight">LAB404</span></h1>
+                <p class="hero-subtitle fade-in-on-scroll">Our Space/Time Localization</p>
             </div>
         </section>
 
-        <!-- Contact Information Section -->
-        <section class="section section-light">
+        <section class="section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header fade-in-on-scroll">
                     <h2 class="section-title">Get in Touch</h2>
                     <p class="section-subtitle">Visit us or reach out through various channels</p>
                 </div>
-                
-                <div class="grid grid-3">
-                    <!-- Location Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/654160_564093.png" alt="Location Map">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">Location</h3>
-                            <p class="card-description">Professor Lorenzo's LAB404 is located at CMKL University in Thailand. Our campus offers a vibrant environment for research and innovation.</p>
-                            <p>Visitors and collaborators are welcome to explore our facilities and engage with our ongoing projects.</p>
-                            
-                            <div class="contact-details mt-3">
-                                <p><i class="fas fa-map-marker-alt"></i> KLLC Building 7th floor, KMITL University</p>
-                                <p class="ml-4">Lat Krabang, Bangkok 10520</p>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <a href="https://maps.app.goo.gl/NgStCU5V8MYoHpu9A" class="btn" target="_blank">View on Map</a>
-                            </div>
+
+                <div class="grid grid-3 contact-info-cards">
+                    <div class="content-block card-style fade-in-on-scroll">
+                        <div class="block-icon"><i class="fas fa-map-marker-alt fa-2x"></i></div>
+                        <h3 class="block-title">Location</h3>
+                        <div class="block-description">
+                            <p>
+                                CMKL University <br>
+                                KLLC Building 7th floor, KMITL University <br>
+                                1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520, Thailand
+                            </p>
+                            <p class="mt-2"><a href="https://maps.google.com/?q=CMKL+University,1+Chalong+Krung+1+Alley,Lat+Krabang,Bangkok+10520" class="link-arrow" target="_blank" rel="noopener noreferrer">View on Map <i class="fas fa-arrow-right"></i></a></p>
                         </div>
                     </div>
-                    
-                    <!-- Business Hours Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/555088_14439.jpeg" alt="Business Hours">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">Business Hours</h3>
-                            <p class="card-description">Our office is open all 7 days and our students and researchers will be onsite from 10:00 - 17:00.</p>
-                            <p>We strive to accommodate your schedule and are available for meetings and discussions during these hours.</p>
-                            
-                            <div class="contact-details mt-3">
-                                <p><i class="far fa-clock"></i> Monday - Sunday: 10:00 - 17:00</p>
-                                <p><i class="fas fa-info-circle"></i> For after-hours inquiries, please contact us via email.</p>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <a href="mailto:lorenzo@cmkl.ac.th" class="btn">Email Us</a>
-                            </div>
+
+                    <div class="content-block card-style fade-in-on-scroll">
+                        <div class="block-icon"><i class="far fa-clock fa-2x"></i></div>
+                        <h3 class="block-title">Business Hours</h3>
+                         <div class="block-description">
+                            <p>
+                                Monday - Sunday: 10:00 - 17:00 <br>
+                                <span class="small-text">(Students/Researchers typically onsite)</span>
+                            </p>
+                            <p class="mt-2 small-text">For after-hours inquiries, please use email.</p>
                         </div>
                     </div>
-                    
-                    <!-- Contact Methods Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto,w_4096/unsplashcom/photo-1529420094578-ce3758749bac" alt="Contact Form">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">Contact Form</h3>
-                            <p class="card-description">For any inquiries, feedback, or support, please fill out the contact form below.</p>
-                            <p>We value your input and aim to respond promptly to all messages.</p>
-                            
-                            <div class="contact-details mt-3">
-                                <p><i class="fas fa-envelope"></i> lorenzo@cmkl.ac.th</p>
-                                <p><i class="fas fa-question-circle"></i> Questions about projects, collaborations, or visits</p>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <a href="#contact-form" class="btn">Contact Us</a>
-                            </div>
+
+                    <div class="content-block card-style fade-in-on-scroll">
+                        <div class="block-icon"><i class="fas fa-envelope fa-2x"></i></div>
+                        <h3 class="block-title">Contact</h3>
+                         <div class="block-description">
+                            <p>
+                                <a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a>
+                            </p>
+                            <p class="mt-2 small-text">For projects, collaborations, or visits.</p>
+                            <p class="mt-2"><a href="#contact-form" class="link-arrow">Use Contact Form <i class="fas fa-arrow-down"></i></a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Map Section -->
-        <section class="section section-primary section-pattern">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Find Us</h2>
-                    <p class="section-subtitle">Visit our campus in Bangkok, Thailand</p>
-                </div>
-                
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7593321786143!2d100.7757604!3d13.7275905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6649eaf5ba29%3A0x9f3278fb723a0cd9!2sCMKL%20University!5e0!3m2!1sen!2sus!4v1711440000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+        <section class="section section-map no-padding">
+             <div class="map-container fade-in-on-scroll">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.1316302950631!2d100.77707020893926!3d13.72766386313942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6649eaf5ba29%3A0x9f3278fb723a0cd9!2sCMKL%20University!5e0!3m2!1sen!2sth!4v1743163394652!5m2!1sen!2sth" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map location of CMKL University"></iframe>
             </div>
         </section>
 
-        <!-- Contact Form Section -->
-        <section class="section section-light" id="contact-form">
+        <section class="section section-contrast" id="contact-form">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header fade-in-on-scroll">
                     <h2 class="section-title">Reach Out to Us</h2>
                     <p class="section-subtitle">Your questions and comments are important to us</p>
                 </div>
-                
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+
+                <div class="contact-form-container fade-in-on-scroll">
+                    <form class="contact-form" id="lab404-contact-form" action="https://formspree.io/f/mgvalawz" method="POST">
+                         <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required aria-required="true">
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required aria-required="true">
+                                 <small class="error-message"></small>
+                            </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        
+
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Message subject" required>
-                        </div>
-                        
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Message subject (Optional)">
+                         </div>
+
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Your message" rows="6" required></textarea>
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Your message" rows="6" required aria-required="true"></textarea>
+                             <small class="error-message"></small>
                         </div>
-                        
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn">Submit Message</button>
+
+                         <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Submit Message</button>
                         </div>
+                         <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="section section-primary">
-            <div class="container text-center">
-                <h2 class="section-title">Join Our Team</h2>
-                <p class="mb-4">Explore collaboration opportunities with LAB404</p>
-                <a href="collaborate.html" class="btn btn-secondary">Learn More</a>
+        <section class="section cta-section section-accent">
+            <div class="container text-center fade-in-on-scroll">
+                <h2 class="section-title">Interested in Collaborating?</h2>
+                <p class="mb-4 section-subtitle">Explore opportunities to join or partner with LAB404.</p>
+                <a href="collaborate.html" class="btn btn-light">Learn More</a>
             </div>
         </section>
-
-        <!-- Scroll to top button -->
-        <button id="scroll-top" class="scroll-top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p><a href="#">Our Mission</a></p>
-                    <p><a href="#">Our Activities</a></p>
+                <div class="footer-column fade-in-on-scroll">
+                    <h3>About LAB404</h3>
+                    <p>A special projects unit at CMKL University nurturing innovation through creativity, technology, and hands-on development.</p>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Collaborate</h3>
-                    <p><a href="collaborate.html">We are Recruiting!</a></p>
-                    <p><a href="collaborate.html">Research Partnerships</a></p>
+                <div class="footer-column fade-in-on-scroll">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="collaborate.html">Collaborate</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-column">
+                <div class="footer-column fade-in-on-scroll">
                     <h3>Contact Us</h3>
-                    <p>CMKL University</p>
-                    <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
-                    <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a></p>
-                    
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p>CMKL University<br> 1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520</p>
+                    <p><a href="mailto:lorenzo@cmkl.ac.th"><i class="fas fa-envelope"></i> lorenzo@cmkl.ac.th</a></p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>©2025 LAB404 | All Rights Reserved</p>
+            <div class="footer-bottom fade-in-on-scroll">
+                <p>© <script>document.write(new Date().getFullYear())</script> LAB404 | CMKL University</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>

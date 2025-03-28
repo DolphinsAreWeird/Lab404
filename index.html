@@ -3,235 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000919">
+    <meta name="description" content="LAB404 - Special Projects Unit at CMKL University nurturing innovation through creativity, technology, business, AI, and hands-on development.">
+    <meta name="keywords" content="LAB404, CMKL University, Innovation, AI, Technology, Projects, Research, Education">
+    <meta name="theme-color" content="#f8f9fa">
     <title>LAB404 - CMKL University</title>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Favicon -->
     <link rel="shortcut icon" href="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738566445_VQbP5C4.png" type="image/x-icon">
 </head>
-<body>
-    <!-- Header & Navigation -->
+<body class="page-home">
+
+    <div id="tsparticles"></div> <!-- Particle Container -->
+
     <header class="header">
         <div class="container nav-container">
-            <ul class="nav-links nav-left">
-                <li><a href="index.html">LAB404</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-            
             <div class="logo">
                 <a href="index.html">
-                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 Logo">
-                </a>
+                    <img class="logo-img" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 CMKL University Logo">
+                 </a>
             </div>
-            
-            <ul class="nav-links nav-right">
-                <li><a href="collaborate.html">Collaborate</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            
-            <div class="menu-toggle">
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="collaborate.html">Collaborate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle" type="button" class="theme-toggle-button-fa" aria-label="Toggle dark mode">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
+
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero hero-home">
             <div class="container">
-                <h1>Welcome to <span class="highlight">LAB404</span></h1>
-                <p>Engage with the latest educational experiment of LAB404,<br>
-                the <span class="highlight">Special Projects Unit</span> at <span class="highlight">CMKL University</span>,<br>
-                nurturing innovation through creativity, technology, business, AI, and hands-on development.</p>
-                
-                <div class="hero-buttons mt-4">
-                    <a href="projects.html" class="btn">Explore Our Projects</a>
-                    <a href="collaborate.html" class="btn btn-outline ml-3">Join Our Team</a>
-                </div>
-            </div>
-        </section>
-        <!-- Wave Transition -->
-        <!-- <div class="wave-transition dark-to-red">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div> -->
-
-        <!-- Talent Incubator Section -->
-        <section class="section section-secondary">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">LAB404 - Talent Incubator</h2>
-                    <p class="section-subtitle">Creativity to serve innovation</p>
-                </div>
+                <h1 class="fade-in-on-scroll"><span class="highlight">LAB404</span> - TALENT INCUBATOR</h1>
+                <p class="hero-subtitle fade-in-on-scroll">
+                    Creativity to serve innovation. Engage with the latest educational experiment nurturing innovation through creativity, technology, business, AI, and hands-on development at CMKL University.
+                </p>
             </div>
         </section>
 
-        <!-- Project Showcase Section -->
-        <section class="section section-secondary section-pattern">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Projects @ <span class="highlight">LAB404</span></h2>
-                    <p class="section-subtitle">Explore some of our pioneering projects</p>
+        <section class="section section-accent section-intro text-center">
+             <div class="container fade-in-on-scroll">
+                 <h2 class="section-title">LAB404 - Talent Incubator</h2>
+                 <p class="section-subtitle large-subtitle">Creativity to serve innovation</p>
+            </div>
+        </section>
+
+        <section class="section section-contrast">
+             <div class="container">
+                 <div class="section-header fade-in-on-scroll">
+                    <h2 class="section-title">Our Approach</h2>
+                    <p class="section-subtitle">Guidance, Focus, and Philosophy</p>
                 </div>
-                
                 <div class="grid grid-3">
-                    <!-- Project 1 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/421571_175593.png" alt="MY HAPPY THAI NEIGHBORHOOD">
+                    <article class="card fade-in-on-scroll">
+                         <div class="card-image">
+                            <img src="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/35732_378283.png" alt="Lorenzo Avi, Creative Leader at LAB404" loading="lazy">
                         </div>
-                        
                         <div class="card-content">
-                            <h3 class="card-title">MY HAPPY THAI NEIGHBORHOOD</h3>
-                            <p class="card-description">An engaging interactive webtoon-based game designed to educate players in Southeast Asia about cybercrime and equip them with practical strategies to combat scams effectively.</p>
-                            
-                            <div class="card-details">
-                                <h4>Revolutionizing Gamified Education</h4>
-                                <ul class="mb-3">
-                                    <li>Webtoon-Based Learning Platform</li>
-                                    <li>Gamifying Cybersecurity and Scam Awareness</li>
-                                    <li>EdTech and AI Integration</li>
-                                </ul>
-                                <div class="text-center mb-3">
-                                    <a href="#" class="btn">Try our Demo</a>
-                                    <p class="mt-1"><small><em>* Prototype uses placeholder art</em></small></p>
-                                </div>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <a href="projects.html" class="btn btn-dark">Read More</a>
-                            </div>
+                            <h3 class="card-title">Guidance</h3>
+                            <p class="card-description">
+                                At the origin of the initiative, <strong>Lorenzo Avi</strong> brings over 20 years of international experience as a creative leader in the game entertainment industry. Today, he shares his passion for interactive digital experiences with Engineering students at CMKL University.
+                            </p>
                         </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="card">
+                        <div class="card-footer">
+                            <a href="projects.html" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="card fade-in-on-scroll">
                         <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/849939_850032.png" alt="TH.AI.IMMERSION">
+                             <img src="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19429353/176124_796386.png" alt="LAB404 Project Framework Diagram" loading="lazy">
                         </div>
-                        
                         <div class="card-content">
-                            <h3 class="card-title">TH.AI.IMMERSION</h3>
-                            <p class="card-description">An AI-generated digital art immersion that transforms real-world environments into interactive artistic impressionist renditions.</p>
-                            
-                            <div class="card-details">
-                                <h4>Redefining Digital Immersion</h4>
-                                <ul class="mb-3">
-                                    <li>Real-time Generation and Interaction</li>
-                                    <li>Immersive Thailand Cultural Experience</li>
-                                    <li>Advanced Diffusion Model Integration</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <a href="projects.html" class="btn btn-dark">Read More</a>
-                            </div>
+                            <h3 class="card-title">Focus</h3>
+                            <p class="card-description">
+                                The core purpose of <strong>LAB404</strong> is to offer a framework for students to collaborate, express creativity, gain hands-on experience, and deliver meaningful projects mixing technology, interaction, software, engineering, AI, art, and design, with a practical application in mind.
+                            </p>
                         </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="card">
+                         <div class="card-footer">
+                            <a href="projects.html" class="btn btn-secondary">See Projects</a>
+                        </div>
+                    </article>
+
+                    <article class="card fade-in-on-scroll">
                         <div class="card-image">
-                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/785622_257560.png" alt="FALLACY HUNTER">
+                             <img src="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19429353/380428_806331.png" alt="Students collaborating in a learning environment" loading="lazy">
                         </div>
-                        
                         <div class="card-content">
-                            <h3 class="card-title">FALLACY HUNTER</h3>
-                            <p class="card-description">A browser-based extension focused on text-based fallacy detection using pattern recognition and machine learning frameworks.</p>
-                            
-                            <div class="card-details">
-                                <h4>Enabling Critical Reading</h4>
-                                <ul class="mb-3">
-                                    <li>Advanced NLP Fallacy Detection</li>
-                                    <li>Real-time Feedback and Learning</li>
-                                    <li>Enhanced Communication Skills</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <a href="projects.html" class="btn btn-dark">Read More</a>
-                            </div>
+                            <h3 class="card-title">Philosophy</h3>
+                            <p class="card-description">
+                                <strong>LAB404</strong> is an evolving learning environment empowering students to explore, experiment, innovate, and embrace failure as a path to success. Diversity fosters collaboration, mentorship, and ownership, honing essential skills for innovators and leaders.
+                            </p>
                         </div>
-                    </div>
+                         <div class="card-footer">
+                            <a href="collaborate.html" class="btn btn-secondary">Join Us</a>
+                         </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Wave Transition -->
-        <!-- <div class="wave-transition red-to-light">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div> -->
+         <section class="section">
+              <div class="container">
+                 <div class="section-header fade-in-on-scroll">
+                    <h2 class="section-title">Our Dedicated Team</h2>
+                    <p class="section-subtitle">Transversal collaborations to maximize impact</p>
+                    </div>
+                <div class="grid grid-3">
+                    <article class="card fade-in-on-scroll">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/690140_233731.png" alt="Diverse group of innovative students" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Innovative Students</h3>
+                            <p class="card-description">
+                                A team of ambitious and passionate students dedicated to technology and positive innovation. Combining diverse perspectives, skills, and creativity, we push the boundaries of what's possible.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="collaborate.html" class="btn btn-secondary">Meet the Team</a>
+                        </div>
+                    </article>
 
-        <!-- CTA Section -->
-        <section class="section section-light">
-            <div class="container text-center">
-                <h2 class="section-title">Join Our Team</h2>
-                <p class="mb-4">Be part of groundbreaking research and innovation at LAB404</p>
-                <a href="collaborate.html" class="btn">Learn More</a>
+                    <article class="card fade-in-on-scroll">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/198922_559389.jpeg" alt="Researchers collaborating on a project" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Research Collaborators</h3>
+                            <p class="card-description">
+                                We collaborate with leading researchers and industry experts who provide invaluable insights and mentorship, enhancing our projects and keeping us at the forefront of technological advancements.
+                             </p>
+                        </div>
+                         <div class="card-footer">
+                            <a href="collaborate.html#team-testimonials" class="btn btn-secondary">Our Partners</a>
+                         </div>
+                    </article>
+
+                    <article class="card fade-in-on-scroll">
+                        <div class="card-image">
+                            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/19116572/444622_810380.jpeg" alt="Student leader presenting project findings" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Future Leaders</h3>
+                            <p class="card-description">
+                                Students at <strong>LAB404</strong> are pragmatic researchers and growing leaders. Teamwork across projects develops leadership skills, preparing them for success in technology, academia, and business ventures.
+                            </p>
+                        </div>
+                         <div class="card-footer">
+                            <a href="collaborate.html#open-positions" class="btn btn-secondary">Student Opportunities</a>
+                         </div>
+                    </article>
+                </div>
             </div>
         </section>
-
-        <!-- Scroll to top button -->
-        <button id="scroll-top" class="scroll-top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p><a href="#">Our Mission</a></p>
-                    <p><a href="#">Our Activities</a></p>
+                <div class="footer-column fade-in-on-scroll">
+                    <h3>About LAB404</h3>
+                    <p>A special projects unit at CMKL University nurturing innovation through creativity, technology, and hands-on development.</p>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Collaborate</h3>
-                    <p><a href="collaborate.html">We are Recruiting!</a></p>
-                    <p><a href="collaborate.html">Research Partnerships</a></p>
+                <div class="footer-column fade-in-on-scroll">
+                    <h3>Quick Links</h3>
+                     <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="collaborate.html">Collaborate</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-column">
+                <div class="footer-column fade-in-on-scroll">
                     <h3>Contact Us</h3>
-                    <p>CMKL University</p>
-                    <p>1 Chalong Krung 1 Alley, Khwaeng Lat Krabang, Lat Krabang, Bangkok 10520</p>
-                    <p><a href="mailto:lorenzo@cmkl.ac.th">lorenzo@cmkl.ac.th</a></p>
-                    
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+                    <p>CMKL University<br>
+                       1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520</p>
+                    <p><a href="mailto:lorenzo@cmkl.ac.th"><i class="fas fa-envelope"></i> lorenzo@cmkl.ac.th</a></p>
+                     </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>©2025 LAB404 | All Rights Reserved</p>
+            <div class="footer-bottom fade-in-on-scroll">
+                 <p>© <script>document.write(new Date().getFullYear())</script> LAB404 | CMKL University</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
