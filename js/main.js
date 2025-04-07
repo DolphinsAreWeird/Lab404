@@ -1,9 +1,9 @@
 /**
- * LAB404 Website JavaScript v2.2 - FINAL & VERIFIED
+ * LAB404 Website JavaScript v2.3 - SIMPLIFIED SCROLL INDICATOR
  * Description: Main JS functionality including header, menu, theme toggle,
  *              smooth scroll, active nav, form validation, visible colored particles,
- *              scroll animations.
- * Last Updated: March 28, 2025
+ *              scroll animations, and simplified scroll-down-only indicator.
+ * Last Updated: April 8, 2025
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -141,19 +141,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     } catch(error) { console.error("Error setting active navigation link:", error); }
 
-    // --- Scroll Indicator - NEW ---
+    // --- Simplified Scroll Down Indicator ---
     const scrollIndicator = document.querySelector('.scroll-indicator');
     if (scrollIndicator) {
-        // Check if scroll indicator should be visible
+        // Check scroll position and update indicator
         function checkScrollIndicator() {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+            // Check if scrolling is possible (content taller than viewport)
+            const isScrollable = document.body.scrollHeight > window.innerHeight + 100;
+            
+            if (!isScrollable) {
+                scrollIndicator.classList.add('hidden');
+                return;
+            }
+            
+            // Check if we've reached the bottom of the page
+            const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100);
+            
+            // Only show the indicator if we're not at the bottom
+            if (isAtBottom) {
                 scrollIndicator.classList.add('hidden');
             } else {
                 scrollIndicator.classList.remove('hidden');
             }
         }
         
-        // Scroll to content when clicked
+        // Scroll down when clicked
         scrollIndicator.addEventListener('click', function() {
             window.scrollBy({
                 top: window.innerHeight / 2,
