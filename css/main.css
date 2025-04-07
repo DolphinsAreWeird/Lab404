@@ -435,12 +435,12 @@ body.dark-mode .theme-toggle-button-fa .sun-icon {
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition-medium), visibility var(--transition-medium);
-    /* pointer-events: none; will be added below */
+    /* pointer-events: none; was added here previously */
 }
 .mobile-menu-overlay.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: none; /* <<< ADDED: Make overlay non-interactive */
+    pointer-events: none; /* <<< Kept from previous fix */
 }
 
 /* End of Section 6 */
@@ -458,11 +458,55 @@ body.dark-mode .theme-toggle-button-fa .sun-icon {
 body.dark-mode .hero .highlight { background: linear-gradient(to top, rgba(var(--current-accent-primary), 0.25) 40%, transparent 40%); }
 .hero-home { min-height: 80vh; padding-bottom: var(--spacing-xl); }
 .hero-subpage { min-height: 45vh; padding: var(--spacing-lg) 0; }
-.hero-news-post { min-height: 50vh; background-size: cover; background-position: center; position: relative; display: flex; align-items: center; text-align: center; padding: var(--spacing-xl) 0; color: var(--white); border-bottom: none; z-index: 5; }
-.hero-news-post::before { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); z-index: 1; }
-.hero-news-post .container { position: relative; z-index: 10; }
-.hero-news-post h1 { color: var(--white); font-size: clamp(2rem, 5vw, 3rem); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); margin-bottom: var(--spacing-xs); }
-.hero-news-post .post-meta { color: rgba(255, 255, 255, 0.9); font-size: 1rem; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); margin: 0; }
+
+/* --- Force News Post Date Color to White --- */
+.hero-news-post .post-meta {
+    color: #ffffff !important; /* Force solid white color */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8); /* Optional: Adjust shadow if needed for contrast */
+}
+
+/* News Post Hero Styles */
+.hero-news-post {
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    color: var(--white); /* Base color for text inside */
+    border-bottom: none;
+    z-index: 5;
+}
+.hero-news-post::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    z-index: 1; /* Overlay is behind text */
+}
+.hero-news-post .container {
+    position: relative;
+    z-index: 10; /* Text container above overlay */
+}
+.hero-news-post h1 {
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* MODIFIED text-shadow for better contrast */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7),
+                 0px 3px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: var(--spacing-xs);
+}
+.hero-news-post .post-meta {
+    color: rgba(255, 255, 255, 0.95); /* MODIFIED Slightly less transparent white */
+    font-size: 1rem;
+    /* MODIFIED text-shadow for better contrast */
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8),  /* Sharper inner shadow */
+                 0px 2px 5px rgba(0, 0, 0, 0.6);  /* Softer outer shadow */
+    margin: 0;
+}
+
 
 /* Content Types Grid in Hero */
 .content-types {
@@ -629,12 +673,36 @@ body.dark-mode .testimonial-item::before { opacity: 0.3; }
 .collab-options .block-footer, .positions .block-footer { padding: var(--spacing-md) 0 0; }
 
 /* Research Area Cards - Layout Fix */
-.research-areas.grid { gap: var(--spacing-lg); }
-.research-areas .content-block.card-style { padding: var(--spacing-lg); align-items: center; text-align: center; }
-.research-areas .block-icon { font-size: 2rem; margin-bottom: var(--spacing-lg); }
-.research-areas .block-title { font-size: 1.35rem; margin-bottom: var(--spacing-md); font-weight: 600;}
-.research-areas .block-description { font-size: 1rem; line-height: 1.7; max-width: 45ch; margin-left: auto; margin-right: auto; color: var(--current-text-secondary); }
-.research-areas .block-description p { margin-bottom: 0; }
+/* Research Area Cards - UPDATED for smaller size & moved up */
+.research-areas.grid {
+    gap: var(--spacing-md); /* Reduced gap */
+}
+.research-areas .content-block.card-style {
+    padding: var(--spacing-md); /* Reduced padding */
+    align-items: center;
+    text-align: center;
+}
+.research-areas .block-icon {
+    font-size: 1.6rem; /* Slightly smaller icon */
+    margin-bottom: var(--spacing-sm); /* Reduced margin below icon */
+}
+.research-areas .block-title {
+    font-size: 1.15rem; /* Smaller title */
+    margin-bottom: var(--spacing-xs); /* Reduced margin below title */
+    font-weight: 600;
+}
+.research-areas .block-description {
+    font-size: 0.9rem; /* Smaller description text */
+    line-height: 1.6; /* Adjusted line height */
+    max-width: 40ch; /* Limit width slightly */
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--current-text-secondary);
+}
+.research-areas .block-description p {
+    margin-bottom: 0;
+}
+
 
 /* Link Tiles */
 .link-tile { display: block; background-color: var(--card-bg); border-radius: var(--border-radius); padding: 1.25rem; text-decoration: none; color: var(--current-text-primary); transition: transform var(--transition-medium), background-color var(--transition-medium), box-shadow var(--transition-medium); border: 1px solid var(--current-border); box-shadow: var(--current-shadow-sm); height: 100%; }
@@ -740,10 +808,38 @@ textarea.form-control { min-height: 140px; line-height: 1.6; resize: vertical; }
    15. NEWS POST PAGE SPECIFIC STYLES
    ========================================================================== */
 
-.page-news-post .news-post-content { max-width: 800px; margin: var(--spacing-xl) auto; padding: 0 var(--spacing-md); position: relative; z-index: 5; }
-.page-news-post .post-meta { font-size: 0.95rem; color: var(--current-text-secondary); margin-bottom: var(--spacing-lg); border-bottom: 1px solid var(--current-border); padding-bottom: var(--spacing-sm); text-shadow: none; }
-.page-news-post .post-body p { font-size: 1.1rem; line-height: 1.8; color: var(--current-text-secondary); margin-bottom: var(--spacing-md); }
-.page-news-post .post-body img, .page-news-post .post-body iframe { max-width: 100%; height: auto; border-radius: var(--border-radius); margin: var(--spacing-lg) auto; box-shadow: var(--current-shadow-lg); border: 1px solid var(--current-border); display: block; }
+/* Styles for content *within* the article body */
+.page-news-post .news-post-content {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 5;
+}
+/* Meta info *inside* the article body */
+.page-news-post .post-meta {
+    font-size: 0.95rem;
+    color: var(--current-text-secondary); /* Theme color */
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--current-border);
+    padding-bottom: var(--spacing-sm);
+    text-shadow: none; /* Ensure no shadow here */
+}
+.page-news-post .post-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--current-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+.page-news-post .post-body img, .page-news-post .post-body iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: var(--spacing-lg) auto;
+    box-shadow: var(--current-shadow-lg);
+    border: 1px solid var(--current-border);
+    display: block;
+}
 .page-news-post .post-body iframe { aspect-ratio: 16 / 9; }
 .page-news-post .post-body a { font-weight: 500; }
 .page-news-post .link-arrow { margin-top: var(--spacing-lg); }
