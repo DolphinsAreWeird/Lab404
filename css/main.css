@@ -604,6 +604,347 @@ textarea.form-control { min-height: 140px; line-height: 1.6; resize: vertical; }
 .mb-0 { margin-bottom: 0 !important; } .mb-1 { margin-bottom: var(--spacing-xs); } .mb-2 { margin-bottom: var(--spacing-sm); } .mb-3 { margin-bottom: var(--spacing-md); } .mb-4 { margin-bottom: var(--spacing-lg); } .mb-5 { margin-bottom: var(--spacing-xl); }
 
 /* ==========================================================================
+   NEW ADDITIONS TO main.css
+   Add these sections to the appropriate places in your main.css file
+   ========================================================================== */
+
+/* ==========================================================================
+   SCROLL INDICATOR - Add after UTILITIES & ANIMATIONS section
+   ========================================================================== */
+
+   .scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+body.dark-mode .scroll-indicator {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scroll-indicator.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-indicator .arrow-down {
+    color: var(--current-text-primary);
+}
+
+body.dark-mode .scroll-indicator .arrow-down {
+    color: var(--text-dark-primary);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--current-accent-primary), 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(var(--current-accent-primary), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--current-accent-primary), 0);
+    }
+}
+
+/* ==========================================================================
+   MOBILE MENU FIX - Add after the HEADER & NAVIGATION section
+   ========================================================================== */
+
+/* Fix for mobile menu blur issue */
+.mobile-menu-overlay { 
+    position: fixed; 
+    inset: 0; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1499; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity var(--transition-medium), visibility var(--transition-medium); 
+    backdrop-filter: blur(3px); 
+    -webkit-backdrop-filter: blur(3px); 
+}
+
+.mobile-menu-overlay.active { 
+    opacity: 1; 
+    visibility: visible;
+}
+
+/* Ensure the menu itself is NOT affected by the backdrop blur */
+.main-nav.show {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    pointer-events: auto !important;
+    z-index: 1500;
+}
+
+/* Add specific styling for menu items to ensure they're readable */
+.main-nav.show .nav-links a {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.main-nav.show .nav-links a:hover, 
+.main-nav.show .nav-links a:focus-visible {
+    transform: translateX(5px);
+}
+
+/* ==========================================================================
+   COMING SOON PROJECT STYLES - Add after PROJECT DETAILS SECTION
+   ========================================================================== */
+
+/* Coming Soon Project Styles */
+.coming-soon-project {
+    opacity: 0.85;
+    transition: opacity var(--transition-medium);
+}
+
+.coming-soon-project:hover {
+    opacity: 1;
+}
+
+.coming-soon-project .project-image {
+    position: relative;
+}
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-medium);
+}
+
+.coming-soon-label {
+    background-color: var(--current-accent-primary);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    transform: rotate(-5deg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.coming-soon-project:hover .coming-soon-label {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.coming-soon-project:hover .coming-soon-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   LINK TILES - Add after CARD STYLES section
+   ========================================================================== */
+
+/* Link Tiles */
+.link-tile {
+    display: block;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--current-text-primary);
+    transition: transform var(--transition-medium), background-color var(--transition-medium), box-shadow var(--transition-medium);
+    border: 1px solid var(--current-border);
+    box-shadow: var(--current-shadow-sm);
+    height: 100%;
+}
+
+.link-tile:hover, .link-tile:focus-visible {
+    transform: translateY(-5px);
+    background-color: var(--current-bg-contrast);
+    box-shadow: var(--current-shadow-md);
+    color: var(--current-text-primary);
+    border-bottom-color: var(--current-border);
+}
+
+.link-tile-content {
+    display: flex;
+    align-items: center;
+}
+
+.link-tile-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(var(--current-accent-primary), 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    color: var(--current-accent-primary);
+    font-size: 1.25rem;
+    transition: transform var(--transition-medium), background-color var(--transition-medium);
+}
+
+.link-tile-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--current-text-primary);
+}
+
+.link-tile:hover .link-tile-icon, .link-tile:focus-visible .link-tile-icon {
+    transform: scale(1.1);
+    background-color: rgba(var(--current-accent-primary), 0.25);
+}
+
+.link-tile.placeholder {
+    opacity: 0.7;
+}
+
+.link-tile.placeholder:hover {
+    transform: translateY(-3px);
+}
+
+.link-tile.placeholder .link-tile-icon {
+    background-color: rgba(var(--current-text-muted), 0.15);
+    color: var(--current-text-muted);
+}
+
+.link-tile.placeholder .link-tile-text {
+    color: var(--current-text-muted);
+}
+
+/* ==========================================================================
+   CONTENT TYPES GRID - Add after HERO SECTION
+   ========================================================================== */
+
+/* Content Types Grid in Hero */
+.content-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-type {
+    text-align: center;
+    transition: transform var(--transition-medium);
+}
+
+.content-type:hover {
+    transform: translateY(-5px);
+}
+
+.content-type-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(var(--current-accent-primary), 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+    color: var(--current-accent-primary);
+    font-size: 1.75rem;
+    transition: transform var(--transition-medium), background-color var(--transition-medium);
+}
+
+.content-type:hover .content-type-icon {
+    transform: scale(1.1);
+    background-color: rgba(var(--current-accent-primary), 0.25);
+}
+
+.content-type h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--current-text-primary);
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .content-types {
+        gap: 1.5rem;
+    }
+    
+    .content-type-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .content-types {
+        gap: 1rem;
+    }
+    
+    .content-type-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .content-type h3 {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   UPDATED FADE EFFECT - Replace the existing FADE-IN-ON-SCROLL section
+   ========================================================================== */
+
+/* Fade-in Animation - More Subtle Version */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-on-scroll {
+    opacity: 0.35; /* Start with slight visibility instead of completely hidden */
+    transform: translateY(15px);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animations for grid items */
+.grid > .fade-in-on-scroll:nth-child(1) { transition-delay: 0.05s; }
+.grid > .fade-in-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.grid > .fade-in-on-scroll:nth-child(3) { transition-delay: 0.15s; }
+.grid > .fade-in-on-scroll:nth-child(4) { transition-delay: 0.2s; }
+.grid > .fade-in-on-scroll:nth-child(n+5) { transition-delay: 0.25s; }
+
+/* ==========================================================================
    17. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
 

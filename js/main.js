@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleHeaderScroll, { passive: true });
     handleHeaderScroll(); // Initial check
 
-    // --- Mobile Menu ---
+    // --- Mobile Menu - UPDATED VERSION ---
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const body = document.body;
@@ -45,7 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.toggle('menu-open');
         });
         overlay.addEventListener('click', closeMenu);
-        mainNav.querySelectorAll('a').forEach(item => item.addEventListener('click', closeMenu));
+        
+        // Ensure links in the menu are clickable by stopping propagation
+        mainNav.querySelectorAll('a').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event bubbling
+                closeMenu();
+            });
+        });
+        
         document.addEventListener('keydown', e => (e.key === 'Escape' && mainNav.classList.contains('show')) && closeMenu());
     } else {
         console.warn("Mobile menu elements not found. Menu functionality might be limited.");
@@ -132,6 +140,34 @@ document.addEventListener('DOMContentLoaded', function() {
         setActiveLink(navLinks);
 
     } catch(error) { console.error("Error setting active navigation link:", error); }
+
+    // --- Scroll Indicator - NEW ---
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        // Check if scroll indicator should be visible
+        function checkScrollIndicator() {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+        }
+        
+        // Scroll to content when clicked
+        scrollIndicator.addEventListener('click', function() {
+            window.scrollBy({
+                top: window.innerHeight / 2,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkScrollIndicator, { passive: true });
+        
+        // Check on load and resize
+        window.addEventListener('resize', checkScrollIndicator, { passive: true });
+        checkScrollIndicator();
+    }
 
     // --- Form Validation Helpers ---
     function isValidEmail(email) { if (!email) return false; const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; return re.test(String(email).toLowerCase()); }
@@ -299,10 +335,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- Scroll Fade-in Animations ---
+    // --- Updated Scroll Fade-in Animations ---
     const animatedElements = document.querySelectorAll('.fade-in-on-scroll');
     if ('IntersectionObserver' in window) {
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        // More generous threshold to start animations sooner
+        const observerOptions = { threshold: 0.05, rootMargin: '0px 0px -30px 0px' };
         const animationObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
