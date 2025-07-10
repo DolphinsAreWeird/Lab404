@@ -1,0 +1,12 @@
+{
+  // use 5500 instead of the default 3000
+"livePreview.customExternalBrowser": "Chrome",
+"livePreview.portNumber": 5500,
+"livePreview.debugOnExternalPreview": true,
+"livePreview.defaultPreviewPath": "index.html",
+"livePreview.hostIP": "127.0.0.1",
+"livePreview.httpHeaders": {
+
+    "Accept-Ranges": "bytes"
+}
+}
