@@ -6,18 +6,118 @@
     <meta name="description" content="Latest news and updates from LAB404 at CMKL University. Discover our recent activities, project showcases, and achievements in AI and innovation.">
     <meta name="keywords" content="LAB404, News, Updates, CMKL University, AI, Innovation, Projects, Events">
     <meta name="theme-color" content="#f8f9fa">
-    <title>News - LAB404</title>
+    <title>News Feed - LAB404</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738566445_VQbP5C4.png" type="image/x-icon">
+    
+    <style>
+        /* Creative "Terminal" Styling */
+        .lab-terminal {
+            background: #0d0d0d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 4rem;
+            border-left: 4px solid var(--highlight-color);
+            font-family: 'JetBrains Mono', monospace;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .terminal-header {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .terminal-row {
+            color: #00ff41; /* Classic Terminal Green */
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 15px;
+        }
+        .terminal-timestamp { color: #555; }
+        
+        /* Neural Radar Section */
+        .neural-radar {
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .radar-visual {
+            position: relative;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .radar-circle {
+            position: absolute;
+            border: 1px solid var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: pulse 4s infinite;
+        }
+        .radar-node {
+            position: absolute;
+            background: var(--highlight-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.5); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @media (max-width: 768px) {
+            .neural-radar { grid-template-columns: 1fr; }
+            .radar-visual { height: 200px; }
+        }
+
+        /* Spotlight Update */
+        .spotlight-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #1a1a1a 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: row-reverse;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .spotlight-img { width: 55%; object-fit: cover; }
+        .spotlight-body { width: 45%; padding: 3rem; }
+
+        @media (max-width: 992px) {
+            .spotlight-card { flex-direction: column; }
+            .spotlight-img, .spotlight-body { width: 100%; }
+        }
+    </style>
 </head>
 <body class="page-news">
 
-    <div id="tsparticles"></div> <!-- Particle Container -->
+    <div id="tsparticles"></div>
 
     <header class="header">
         <div class="container nav-container">
@@ -26,7 +126,6 @@
                     <img class="logo-img" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/f_auto,q_auto/19116572/ai_logo_1738665161_adEf7mlight_ai_logo.png" alt="LAB404 CMKL University Logo">
                  </a>
             </div>
-
             <nav class="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">HOME</a></li>
@@ -36,16 +135,12 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-
             <button id="theme-toggle" type="button" class="theme-toggle-button-fa" aria-label="Toggle dark mode">
                 <i class="fas fa-sun sun-icon"></i>
                 <i class="fas fa-moon moon-icon"></i>
             </button>
-
             <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
@@ -53,114 +148,112 @@
     <main>
         <section class="hero hero-subpage">
             <div class="container">
-                <h1 class="fade-in-on-scroll">NEWS @ <span class="highlight">LAB404</span></h1>
-                <p class="hero-subtitle fade-in-on-scroll">Keep up with our progress</p>
+                <h1 class="fade-in-on-scroll">THE <span class="highlight">ARCHIVE</span></h1>
+                <p class="hero-subtitle fade-in-on-scroll">Documenting our journey through artificial intelligence.</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div class="section-header fade-in-on-scroll">
-                    <p class="section-subtitle">Discover our recent activities and achievements</p>
+                
+                <!-- NEW: Creative Terminal Section -->
+                <div class="lab-terminal fade-in-on-scroll">
+                    <div class="terminal-header">
+                        <span>System Status: Active</span>
+                        <span>Lab404_Logs_v2025.sh</span>
+                    </div>
+                    <div class="terminal-row">
+                        <span class="terminal-timestamp">[09:42:01]</span>
+                        <span>Initializing Mirror AI beta architecture... SUCCESS</span>
+                    </div>
+                    <div class="terminal-row">
+                        <span class="terminal-timestamp">[11:15:22]</span>
+                        <span>New event detected: AI Innovation Summit 2025 - Bangkok</span>
+                    </div>
+                    <div class="terminal-row" style="color: var(--highlight-color);">
+                        <span class="terminal-timestamp">[CURRENT]</span>
+                        <span>Optimizing multimodal interaction models...</span>
+                    </div>
                 </div>
 
-                <div class="grid grid-3 news-grid">
-                    <!-- News Post 2 Card -->
+                <!-- Spotlight Card -->
+                <div class="spotlight-card fade-in-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Mirror AI Debut" class="spotlight-img">
+                    <div class="spotlight-body">
+                        <span style="color: var(--highlight-color); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;">MAJOR UPDATE</span>
+                        <h2 style="margin: 1rem 0; font-size: 2.2rem;">Mirror AI Debuts at AI Innovation Summit 2025</h2>
+                        <p>The transformation is complete. We’ve evolved TH-Hai Immersion into <strong>Mirror AI</strong>, a more versatile platform for cultural and linguistic intelligence. Presented live at AIEI Thailand.</p>
+                        <a href="news-post-3.html" class="btn btn-primary" style="margin-top: 1.5rem;">View Spotlight</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-2 news-grid">
+                    <!-- Previous News 2 -->
                     <article class="card news-card fade-in-on-scroll">
                         <a href="news-post-2.html" class="card-link-wrapper">
                             <div class="card-image">
-                                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1080,w_1080,f_auto,q_auto/19116572/370515_383891.png" alt="Professor Lorenzo presenting at AI Engineering and Innovation Summit" loading="lazy">
+                                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1080,w_1080,f_auto,q_auto/19116572/370515_383891.png" alt="Summit 2024">
                             </div>
                             <div class="card-content">
-                                <div class="card-meta">
-                                    <span class="card-date"><i class="far fa-calendar-alt"></i> January 17, 2025</span>
-                                </div>
-                                <h3 class="card-title">AI Engineering and Innovation Summit 2024 Highlights</h3>
-                                <p class="card-description">Professor Lorenzo and the team presented at the summit in Bangkok, showcasing projects like My Happy Thai Neighbourhood and TH-Hai Immersion to industry innovators.</p>
-                            </div>
-                             <div class="card-footer">
-                                <span class="card-link-indicator">Read More <i class="fas fa-arrow-right"></i></span>
+                                <h3 class="card-title">2024 Summit Highlights</h3>
+                                <p class="card-description">Professor Lorenzo and the team showcased My Happy Thai Neighbourhood to industry leaders in Bangkok.</p>
                             </div>
                         </a>
                     </article>
 
-                    <!-- News Post 1 Card -->
+                    <!-- Previous News 1 -->
                     <article class="card news-card fade-in-on-scroll">
-                         <a href="news-post-1.html" class="card-link-wrapper">
+                        <a href="news-post-1.html" class="card-link-wrapper">
                             <div class="card-image">
-                                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1080,w_1080,f_auto,q_auto/19116572/320970_300273.png" alt="My Happy Thai Neighbourhood game interface shown at CMKL Showcase" loading="lazy">
+                                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1080,w_1080,f_auto,q_auto/19116572/320970_300273.png" alt="CMKL Showcase">
                             </div>
                             <div class="card-content">
-                                <div class="card-meta">
-                                    <span class="card-date"><i class="far fa-calendar-alt"></i> January 17, 2025</span>
-                                 </div>
-                                <h3 class="card-title">Showcasing My Happy Thai Neighbourhood at CMKL</h3>
-                                <p class="card-description">Presented our interactive cybersecurity game, My Happy Thai Neighbourhood, at CMKL's Local Project Showcases, receiving enthusiastic feedback and valuable insights.</p>
-                             </div>
-                             <div class="card-footer">
-                                <span class="card-link-indicator">Read More <i class="fas fa-arrow-right"></i></span>
-                             </div>
+                                <h3 class="card-title">Showcasing at CMKL</h3>
+                                <p class="card-description">A look back at our interactive cybersecurity showcase featuring local project developments.</p>
+                            </div>
                         </a>
-                    </article>
-
-                    <!-- Placeholder Card -->
-                    <article class="card news-card card-placeholder fade-in-on-scroll">
-                         <div class="card-link-wrapper">
-                             <div class="card-image">
-                                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Abstract image of interconnected nodes or future technology" loading="lazy">
-                            </div>
-                            <div class="card-content">
-                                <div class="card-meta">
-                                    <span class="card-date"><i class="far fa-clock"></i> Coming Soon</span>
-                                </div>
-                                <h3 class="card-title">Future Project Announcement</h3>
-                                <p class="card-description">Stay tuned for news about upcoming projects combining AI, education, and positive social impact.</p>
-                            </div>
-                            <div class="card-footer">
-                                <span class="card-link-indicator disabled">Stay Tuned</span>
-                            </div>
-                        </div>
                     </article>
                 </div>
-                
-                <!-- Demo Day Link Tile -->
-                <!-- <div class="mt-4 fade-in-on-scroll">
-                    <a href="/news/demo-day" class="link-tile">
-                        <div class="link-tile-content">
-                            <div class="link-tile-icon">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <div class="link-tile-text">Demo Day at the Summit</div>
-                        </div>
-                    </a>
-                </div> -->
+
+                <!-- NEW: Creative Neural Radar -->
+                <div class="neural-radar fade-in-on-scroll">
+                    <div class="radar-visual">
+                        <div class="radar-circle" style="width: 100px; height: 100px;"></div>
+                        <div class="radar-circle" style="width: 200px; height: 200px; animation-delay: 1s;"></div>
+                        <div class="radar-circle" style="width: 300px; height: 300px; animation-delay: 2s;"></div>
+                        
+                        <div class="radar-node" style="top: 20%; left: 10%;">LLMs</div>
+                        <div class="radar-node" style="bottom: 30%; right: 15%; animation-delay: 1s;">Computer Vision</div>
+                        <div class="radar-node" style="top: 50%; right: 5%; animation-delay: 2s;">Game Theory</div>
+                        <div class="radar-node" style="bottom: 10%; left: 30%; animation-delay: 3s;">Cultural AI</div>
+                    </div>
+                    <div class="radar-info">
+                        <h2 class="section-title">Current Focus Radar</h2>
+                        <p>Our lab doesn't just build apps; we explore the intersection of diverse AI disciplines. Currently, we are heavily focused on <strong>Multimodal Cultural Intelligence</strong>—bridging the gap between technical LLM capabilities and Southeast Asian cultural nuances.</p>
+                        <p style="margin-top: 1rem; font-style: italic; opacity: 0.8;">"Making technology a mirror for human potential."</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section class="section section-contrast">
              <div class="container">
                 <div class="section-header fade-in-on-scroll">
-                    <h2 class="section-title">Stay Updated</h2>
-                    <p class="section-subtitle">Subscribe to our newsletter for the latest news and developments</p>
+                    <h2 class="section-title">Join the Newsletter</h2>
+                    <p class="section-subtitle">Bimonthly updates on projects and research papers from the lab.</p>
                 </div>
-
                 <div class="newsletter-form fade-in-on-scroll">
                     <form id="newsletter-form">
                         <div class="form-group">
-                            <label for="newsletter-email" class="sr-only">Email Address</label>
-                            <input type="email" id="newsletter-email" placeholder="Your email address" required class="form-control" aria-required="true">
+                            <input type="email" id="newsletter-email" placeholder="Email Address" required class="form-control">
                             <button type="submit" class="btn btn-primary">Subscribe</button>
                         </div>
-                        <div id="newsletter-status" class="form-status mt-2" role="alert" aria-live="polite"></div>
-                        <p class="mt-2 form-privacy-note"><small>We respect your privacy and will never share your information.</small></p>
                     </form>
                 </div>
             </div>
         </section>
         
-        <!-- Scroll indicator -->
-        <!-- Updated Scroll indicator for index.html -->
-        <!-- Simplified Scroll Down Indicator -->
         <div class="scroll-indicator" aria-label="Scroll down">
             <div class="arrow-down">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -200,10 +293,7 @@
     </footer>
 
     <div class="mobile-menu-overlay"></div>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>
